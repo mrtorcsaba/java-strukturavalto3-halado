@@ -1,4 +1,4 @@
-# Kilencedik hét (2023-04-10 - 2023-04-16)
+# Tizedik hét (2023-04-10 - 2023-04-16)
 
 ### Vizsgaremek
 
