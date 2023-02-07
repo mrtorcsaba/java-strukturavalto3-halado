@@ -5,3 +5,7 @@ Ide gyűjtjük a konzultációk rövid leírásait, hogy könnyebben visszakeres
 ## 2023-02-06
 
 Nyitó konzultáció. Információk.
+
+
+## 2023-02-07
+Gyakorlati feladat, annak tesztelése, hogyan működik a JUnit
