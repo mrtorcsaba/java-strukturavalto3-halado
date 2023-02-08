@@ -9,3 +9,6 @@ Nyitó konzultáció. Információk.
 
 ## 2023-02-07
 Gyakorlati feladat, annak tesztelése, hogyan működik a JUnit
+
+## 2023-02-08
+Gyakorlati feladat, AssertJ bevezetése 
