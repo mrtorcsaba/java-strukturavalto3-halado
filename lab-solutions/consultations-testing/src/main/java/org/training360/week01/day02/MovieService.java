@@ -17,6 +17,11 @@ public class MovieService {
 
     private List<Movie> movies = new ArrayList<>();
 
+    private Subscription subscription;
+
+    public MovieService(Subscription subscription) {
+        this.subscription = subscription;
+    }
 
     public void addMovie(Movie movie){
         if(!checkDate(movie)){

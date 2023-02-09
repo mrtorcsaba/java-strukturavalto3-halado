@@ -2,7 +2,11 @@ package org.training360.week01.day02;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.function.Executable;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,9 +14,14 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@ExtendWith(MockitoExtension.class)
 class MovieServiceTest {
 
-    MovieService movieService = new MovieService();
+   @Mock
+   Subscription subscription;
+
+   @InjectMocks
+   MovieService movieService;
 
     @BeforeEach
     void init(){
@@ -24,7 +33,7 @@ class MovieServiceTest {
 
     @Test
     void testAddMovie(){
-        MovieService movieService = new MovieService();
+        MovieService movieService = new MovieService(subscription);
 
         movieService.addMovie(new Movie("Forest Gump", LocalDate.of(1994,12,12),121,Genre.DRAMA));
 
