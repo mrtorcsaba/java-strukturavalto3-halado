@@ -12,3 +12,9 @@ Gyakorlati feladat, annak tesztelése, hogyan működik a JUnit
 
 ## 2023-02-08
 Gyakorlati feladat, AssertJ bevezetése 
+
+## 2023-02-09
+Mockolás bevezetése, LocalDate tesztelése
+
+## 2023-02-10
+Mockolásról részletesen
