@@ -3,6 +3,7 @@ package org.training360.week01.day03;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public class VoteService {
 
@@ -15,16 +16,20 @@ public class VoteService {
         this.timeMachine = timeMachine;
     }
 
+
     public void closeVote(long id){
-        Vote vote = repository.findVoteById(id);
+        Optional<Vote> vote = repository.findVoteById(id);
+
         LocalDateTime now = timeMachine.getTimeMachineNow();
 
-        if(Duration.between(vote.getStartDate(), now).toDays()<2){
+        if(vote.isPresent()){
+         if(Duration.between(vote.get().getStartDate(), now).toDays()<2){
 
-            throw new IllegalArgumentException(String.format("Vote with id %d cannot be closed",vote.getId()));
+            throw new IllegalArgumentException(String.format("Vote with id %d cannot be closed",vote.get().getId()));
+            }
+
+        vote.get().setEndDate(now);
         }
-
-        vote.setEndDate(now);
     }
 
 

@@ -17,18 +17,17 @@ public class MovieService {
 
     private List<Movie> movies = new ArrayList<>();
 
-    private Subscription subscription;
+    private MovieRepository movieRepository;
 
-    public MovieService(Subscription subscription) {
-        this.subscription = subscription;
+    public MovieService(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
     }
 
     public void addMovie(Movie movie){
         if(!checkDate(movie)){
             throw new IllegalArgumentException("Date is not correct: "+movie.getReleaseDate());
         }
-        movie.setId(idGenerator.incrementAndGet());
-        movies.add(movie);
+        movieRepository.saveMovie(movie);
     }
 
 
@@ -38,10 +37,7 @@ public class MovieService {
 
 
     public Movie findByTitle(String title){
-        return movies.stream()
-                .filter(m->m.getTitle().equals(title))
-                .findFirst().orElseThrow(()->new IllegalArgumentException("Title not found:"+title));
-
+        return movieRepository.findByTitle(title);
     }
 
     public List<Movie> findMoviesAfterDate(LocalDate date){

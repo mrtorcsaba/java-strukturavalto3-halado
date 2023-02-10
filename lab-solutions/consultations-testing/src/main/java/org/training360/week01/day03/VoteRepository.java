@@ -1,15 +1,12 @@
 package org.training360.week01.day03;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 public class VoteRepository {
 
 
-    private String repoName;
-
-    public VoteRepository(String repoName) {
-        this.repoName = repoName;
-    }
-
-    public Vote findVoteById(long id){
-        return null;
+    public Optional<Vote> findVoteById(long id){
+        return Optional.empty();
     }
 }
